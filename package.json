@@ -5,6 +5,8 @@
     "@hotwired/stimulus": "^3.2.1",
     "@hotwired/turbo-rails": "^7.3.0",
     "esbuild": "^0.17.14",
+    "mdb-ui-kit": "https://github.com/TaraJura/mdb-ui-kit.git",
+
     "sass": "^1.60.0"
   },
   "scripts": {

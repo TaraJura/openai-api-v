@@ -1,0 +1,14 @@
+%h1 GTP-3.5 turbo model
+= form_with(model: @question) do |form|
+  %div
+    = form.label 'tvoje otázka'
+    = form.text_field :text
+  %div
+    = form.submit
+
+%div{ style: 'margin-top: 50px' }
+  %hr
+  - @questions.each do |question|
+    %p= question.text
+    %p= question.response
+    %hr
