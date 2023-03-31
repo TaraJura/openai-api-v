@@ -8,6 +8,7 @@
     = csp_meta_tag
     = stylesheet_link_tag 'application', 'data-turbo-track': 'reload'
     = javascript_include_tag 'application', 'data-turbo-track': 'reload', defer: true
+    %script{:async => "", :crossorigin => "anonymous", :src => "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6964176144504511"}
   %body
     .container
       = yield
