@@ -1,16 +1,20 @@
-%h1 GTP-3.5 turbo model
+%h1.d-flex.align-items-center.justify-content-center
+  GTP-3.5 turbo model
 = form_with(model: @question) do |form|
-  .row
-    .col-md-10
-      .form-outline
-        = form.text_field :text, class: 'form-control form-control-lg bg-info', required: true
-        = form.label :text, class: 'form-label'
-    .col-md-2
-      = form.submit 'Ask', class: 'btn btn-primary btn-lg'
-
-.row.mt-5
-  %hr
-  - @questions.each do |question|
-    %p= question.text
-    %p= question.response
-    %hr
+  .row.mb-5
+    .row
+      = form.text_field :text, class: 'form-control border', id: 'textAreaExample', required: true
+    .row.mt-3
+      = form.submit 'Ask', class: 'btn btn-primary'
+.row.mt-4
+  .col-sm-12.col-md-12
+    - @questions.each do |question|
+      .row.comment.my
+        .col-sm-12.mb-3
+          %span.badge.rounded-pill.badge-success
+            = question.created_at.strftime('%d.%m.%Y %H:%M')
+          %span.badge.rounded-pill.badge-danger
+            = question.text
+        .col-sm-12
+          = question.response
+      %hr
