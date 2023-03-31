@@ -13,7 +13,7 @@ class Openai
         model: @model,
         messages: [{ role: 'user', content: question }],
         temperature: 0.7,
-        max_tokens: 100
+        max_tokens: 350
       }
     )
     if response['choices'].nil?
