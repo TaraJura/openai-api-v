@@ -12,10 +12,14 @@ class Openai
       parameters: {
         model: @model,
         messages: [{ role: 'user', content: question }],
-        temperature: 0.7
+        temperature: 0.7,
+        max_tokens: 100
       }
     )
-
-    response['choices'].first['message']['content']
+    if response['choices'].nil?
+      'No response from OpenAI'
+    else
+      response['choices'].first['message']['content']
+    end
   end
 end
