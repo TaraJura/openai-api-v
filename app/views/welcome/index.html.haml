@@ -1,10 +1,10 @@
 %h1.d-flex.align-items-center.justify-content-center
-  GTP-3.5 turbo model - max 350 tokens ( 300 slov )
+  GTP-3.5 turbo model
 = form_with(model: @question) do |form|
   .row.mb-5
-    .row
+    .col
       = form.text_field :text, class: 'form-control border', id: 'textAreaExample', required: true
-    .row.mt-3
+    .d-flex.align-items-center.justify-content-center.mt-2
       = form.submit 'Ask', class: 'btn btn-primary'
 .row.mt-4
   .col-sm-12.col-md-12
@@ -12,9 +12,9 @@
       .row.comment.my
         .col-sm-12.mb-3
           %span.badge.rounded-pill.badge-success
-            = question.created_at.strftime('%d.%m.%Y %H:%M')
-          %span.badge.rounded-pill.badge-danger.text-wrap
-            = question.text
+            = question.created_at.strftime('%d.%m.%Y %H:%M')   
+          %b
+            = question.text         
         .col-sm-12
           = question.response
       %hr
