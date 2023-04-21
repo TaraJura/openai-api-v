@@ -42,6 +42,7 @@ gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'typhoeus'
 gem 'whenever', require: false
+gem 'pygments.rb'
 
 group :test do
   gem 'capybara'
