@@ -9,6 +9,15 @@
     = stylesheet_link_tag 'application', 'data-turbo-track': 'reload'
     = javascript_include_tag 'application', 'data-turbo-track': 'reload', defer: true
     %script{:async => "", :crossorigin => "anonymous", :src => "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6964176144504511"}
+    %script{:async => "", :src => "https://www.googletagmanager.com/gtag/js?id=G-Z51MEWSKNL"}
+    :javascript
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Z51MEWSKNL');
   %body
     .container
       = yield
+
+
+
