@@ -12,9 +12,11 @@
       .row.comment.my
         .col-sm-12.mb-3
           %span.badge.rounded-pill.badge-success
-            = question.created_at.strftime('%d.%m.%Y %H:%M')   
+            = question.created_at.strftime('%d.%m.%Y %H:%M')
           %b
-            = question.text         
+            = question.text
         .col-sm-12
           = question.response
       %hr
+.row
+  = link_to 'More', root_path(all_messages: true), class: 'btn btn-secondary'

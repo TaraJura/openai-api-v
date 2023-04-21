@@ -2,7 +2,11 @@
 
 class WelcomeController < ApplicationController
   def index
-    @questions = Question.all.order(created_at: :desc).limit(100)
+    @questions = if params[:all_messages].present?
+                   Question.all.order(created_at: :desc)
+                 else
+                   Question.all.order(created_at: :desc).limit(100)
+                 end
     @question = Question.new
   end
 end
