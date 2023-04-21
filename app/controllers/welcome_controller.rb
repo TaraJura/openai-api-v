@@ -2,7 +2,7 @@
 
 class WelcomeController < ApplicationController
   def index
-    @questions = Question.all.order(created_at: :desc)
+    @questions = Question.all.order(created_at: :desc).limit(100)
     @question = Question.new
   end
 end
